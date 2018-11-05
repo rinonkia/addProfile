@@ -12,8 +12,13 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ route('signup.get', '新規加入') }}"></a></li>
-                    <li><a href="{{ route('login', 'ログイン') }}"></a></li> 
+                    @if (Auth::check())
+                        <li><a href="#">編集</a></li>
+                        <li><a href="{{ route('logout.get')  }}">ログアウト</a></li> 
+                    @else
+                        <li><a href="{{ route('signup.get') }}">新規加入</a></li>
+                        <li><a href="{{ route('login')}}">ログイン</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
