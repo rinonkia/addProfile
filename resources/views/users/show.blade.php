@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="profile-textarea">
-                @include('texts.text', ['text' => $text])
+                text-test include('texts.tests', ['text' => $text])
             </div>
         </div>
     </div>

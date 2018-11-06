@@ -13,7 +13,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
-                        <li><a href="#">編集</a></li>
+                        <li><a href="{{ route('users.show', Auth::user()->name) }}">マイプロフィール</a></li>
+                        <li><a href="/">プロフィールの編集</a></li>
                         <li><a href="{{ route('logout.get')  }}">ログアウト</a></li> 
                     @else
                         <li><a href="{{ route('signup.get') }}">新規加入</a></li>

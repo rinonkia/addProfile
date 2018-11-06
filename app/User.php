@@ -31,4 +31,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Profile::class);
     }
+    
+    //text
+    
+    public function text()
+    {
+        return $this->hasOne(Text::class);
+    }
 }
