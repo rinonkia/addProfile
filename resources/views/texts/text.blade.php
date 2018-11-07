@@ -7,9 +7,19 @@
 @if (Auth::id() == $user->id)
     <div class="text-control-button">
     @if (count($text) > 0)
-        更新 削除
+        <ul>
+            <li>
+                {!! Form::open(['route' => ['texts.destroy', $user->id], 'method' => 'delete']) !!}
+                    {!! Form::submit('削除しちゃう', ['class' => 'btn btn-danger btn-md']) !!}
+                {!! Form::close() !!}
+            </li>
+            <li>
+                {!! link_to_route('texts.edit', '編集する', ['id' => $user->id], ['class' => 'btn btn-primary btn-md']) !!}
+            </li>
+
+        </ul>
     @else
-        {!! link_to_route('texts.create', 'テキストを追加する') !!}
+        {!! link_to_route('texts.create', 'テキストを追加する', null, ['class' => 'btn btn-default']) !!}
     @endif
     </div>
 @endif

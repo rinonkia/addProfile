@@ -26,6 +26,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 // プロフィールに手を加える場合
 Route::group(['middleware' => 'auth'], function() {
-    Route::resource('profiles', 'ProfilesController', ['only' => ['store', 'destroy', 'update']]);
+    Route::resource('profiles', 'ProfilesController', ['only' => ['store', 'update', 'destroy', 'update']]);
     Route::resource('texts', 'ProfileTextsController');
 });

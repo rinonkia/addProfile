@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Controller;
+
 use App\Text;
+
 
 class ProfileTextsController extends Controller
 {
@@ -71,11 +74,16 @@ class ProfileTextsController extends Controller
      */
     public function edit($id)
     {
-        $text = Text::find($id);
+        $text = Text::where('user_id', $id)->first();
         
-        return view('texts.edit', [
-            'text' => $text,
-        ]);
+        if (\Auth::id() == $text->user_id) {
+            return view('texts.edit', [
+                'text' => $text,
+            ]);
+            
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -87,6 +95,10 @@ class ProfileTextsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'content' => 'required|min:1',
+            ]);
+        
         $text = Text::find($id);
         $text->content = $request->content;
         $text->save();
@@ -102,6 +114,11 @@ class ProfileTextsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $text = Text::where('user_id', $id)->first();
+        if (\Auth::id() == $text->user_id ){
+            $text->delete();
+        }
+        
+        return redirect()->back();
     }
 }
