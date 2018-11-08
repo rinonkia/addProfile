@@ -28,11 +28,8 @@ class ProfileTextsController extends Controller
      */
     public function create()
     {
-        $text = new Text;
-        
-        return view('texts.create', [
-            'text' => $text,
-        ]);
+        return view('texts.create');
+
     }
 
     /**
@@ -76,7 +73,7 @@ class ProfileTextsController extends Controller
     {
         $text = Text::where('user_id', $id)->first();
         
-        if (\Auth::id() == $text->user_id) {
+        if ( \Auth::id() == $text->user_id) {
             return view('texts.edit', [
                 'text' => $text,
             ]);
@@ -96,8 +93,8 @@ class ProfileTextsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'content' => 'required|min:1',
-            ]);
+            'content' => 'required',
+        ]);
         
         $text = Text::find($id);
         $text->content = $request->content;

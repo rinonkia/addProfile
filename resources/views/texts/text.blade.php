@@ -16,9 +16,11 @@
             <li>
                 {!! link_to_route('texts.edit', '編集する', ['id' => $user->id], ['class' => 'btn btn-primary btn-md']) !!}
             </li>
-
         </ul>
     @else
+        <div class="text-muted">
+            <p>現在テキストはありません</p>
+        </div>
         {!! link_to_route('texts.create', 'テキストを追加する', null, ['class' => 'btn btn-default']) !!}
     @endif
     </div>

@@ -26,6 +26,9 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 // プロフィールに手を加える場合
 Route::group(['middleware' => 'auth'], function() {
-    Route::resource('profiles', 'ProfilesController', ['only' => ['store', 'update', 'destroy', 'update']]);
+    Route::resource('profiles', 'ProfilesController', ['only' => ['create', 'store', 'update', 'destroy', 'edit']]);
     Route::resource('texts', 'ProfileTextsController');
+    
+    //プロフィール画像の登録
+    //Route::post('image', 'ImageController@store')->name('image.post');
 });

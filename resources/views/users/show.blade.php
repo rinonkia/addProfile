@@ -19,12 +19,21 @@
                 <h3>Profile</h3>
             </div>
             <div class="apanel-body">
-                <div class="profile-column">
-                    @include('profiles.columns', ['profiles' => $profiles ])
+                <div class="myprofile-columns">
+                    @foreach($profiles as $profile)
+                        <div class="column">
+                            <div class="column-thema text-muted">
+                                {{ $profile->thema }}
+                            </div>
+                            <div class="column-answer">
+                                {{ $profile->answer }}
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
             @if (count($text) > 0)
-                <div class="text-content">
+                <div class="show-text">
                     <p>{!! nl2br(e($text->content)) !!}</p>
                 </div>
             @endif

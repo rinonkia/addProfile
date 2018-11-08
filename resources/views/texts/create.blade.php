@@ -3,10 +3,10 @@
 @section('content')
    <h1>新規テキスト作成ページ</h1>
     <div class="profile-text">
-        {!! Form::open(['route' => 'texts.store'], ['user' => Auth::user()]) !!}
+        {!! Form::open(['route' => 'texts.store']) !!}
             <div class="profile-textarea form-group">
                 {!! Form::label('content', 'text') !!}
-                {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'row' => '2']) !!}
+                {!! Form::textarea('content', null, ['class' => 'form-control', 'row' => '2']) !!}
                 </div>
                 
                 <div class="form-group text-button">

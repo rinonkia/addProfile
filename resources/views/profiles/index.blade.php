@@ -21,6 +21,12 @@
             <div class="apanel-body">
                 <div class="profile-column">
                     @include('profiles.columns', ['profiles' => $profiles ])
+                    
+                    @if (Auth::id() == $user->id )
+                        <div class="columns-create-button">
+                            {!! link_to_route('profiles.create', 'カラムを追加する', null, ['class' => 'btn btn-default']) !!}
+                        </div>
+                    @endif
                 </div>
             </div>
             <div class="profile-textarea">
