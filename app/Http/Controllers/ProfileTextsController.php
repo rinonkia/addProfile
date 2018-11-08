@@ -71,7 +71,7 @@ class ProfileTextsController extends Controller
      */
     public function edit($id)
     {
-        $text = Text::where('user_id', $id)->first();
+        $text = Text::where('id', $id)->first();
         
         if ( \Auth::id() == $text->user_id) {
             return view('texts.edit', [
