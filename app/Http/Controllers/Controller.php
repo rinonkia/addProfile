@@ -10,4 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+    public function counts($user)
+    {
+        $count_columns = $user->profile()->count();
+        return [
+            'count_columns' => $count_columns,
+            ];
+    }
 }

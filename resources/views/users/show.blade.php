@@ -20,13 +20,13 @@
             <div class="apanel-body">
                 <div class="myprofile-columns">
                     @foreach($profiles as $profile)
-                        <div class="column">
-                            <div class="column-thema text-muted">
+                        <div class="column show-column">
+                            <p class="column-thema text-muted">
                                 {{ $profile->thema }}
-                            </div>
-                            <div class="column-answer">
+                            </p>
+                            <text class="column-answer-show">
                                 {{ $profile->answer }}
-                            </div>
+                            </text>
                         </div>
                     @endforeach
                 </div>

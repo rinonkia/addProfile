@@ -29,6 +29,8 @@ class ProfilesController extends Controller
                 'myUrl' => $myUrl,
             ];
             
+            $data += $this->counts($user);
+            
             return view('profiles.index', $data);
             
         } else {

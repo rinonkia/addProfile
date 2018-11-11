@@ -10,7 +10,7 @@
                 @include('profiles.image')
             </div>
             <div class="links">
-                <a href="#"></a>
+                <a href="#">Twitter</a>
             </div>
         </div>
         
@@ -22,7 +22,7 @@
                 <div class="profile-column">
                     @include('profiles.columns', ['profiles' => $profiles ])
                     
-                    @if (Auth::id() == $user->id )
+                    @if (Auth::id() == $user->id && $count_columns < 10 )
                         <div class="columns-create-button">
                             {!! link_to_route('profiles.create', 'カラムを追加する', null, ['class' => 'btn btn-default']) !!}
                         </div>
