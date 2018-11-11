@@ -30,5 +30,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('texts', 'ProfileTextsController');
     
     //プロフィール画像の登録
-    //Route::post('image', 'ImageController@store')->name('image.post');
+    Route::post('upload', 'ProfilesController@upload')->name('upload.post');
 });

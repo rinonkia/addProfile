@@ -5,10 +5,10 @@
  <div class="container">
     <div class="mainn">
         <div class="main-head">
-            <div class="myphoto">
-                <img src="{{ Gravatar::src(Auth::user()->email, 150) . '&d=mm' }}" alt="" class="img-circle">
-            </div>
             <div class="myname">{{ Auth::user()->name }}</div>
+            <div class="myphoto">
+                @include('profiles.image')
+            </div>
             <div class="links">
                 <a href="#"></a>
             </div>
@@ -32,8 +32,22 @@
             <div class="profile-textarea">
                 @include('texts.text', ['text', $text ])
             </div>
+            <div class="url-form">
+                <p>自分のプロフィールページ</p>
+                <input id="copyTarget" type="text" value="{{ $myUrl }}" readonly>
+                <button onclick="copyToClipboard()">Copy URL</button>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    function copyToClipboard() {
+        var copyTarget = document.getElementById("copyTarget");
+        
+        copyTarget.select();
+        
+        document.execCommand("Copy");
+    }
+</script>
 
 @endsection

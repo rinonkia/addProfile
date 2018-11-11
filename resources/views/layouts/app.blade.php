@@ -26,5 +26,6 @@
         </div>
         
         @include('commons.footer')
+    
     </body>
 </html>

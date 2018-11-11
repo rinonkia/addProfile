@@ -20,11 +20,13 @@ class ProfilesController extends Controller
             $user = \Auth::user();
             $profiles = $user->profile()->orderBy('created_at')->get();
             $text = Text::where('user_id', $user->id)->first();
+            $myUrl = url("/users/{$user->name}");
             
             $data = [
                 'user' => $user,
                 'profiles' => $profiles,
                 'text' => $text,
+                'myUrl' => $myUrl,
             ];
             
             return view('profiles.index', $data);
@@ -36,6 +38,11 @@ class ProfilesController extends Controller
     
     public function show($name)
     {
+        if (User::where('name', $name)->first() == null){
+            
+            return redirect('/')->withErrors('ユーザーが存在しません');
+        }
+        
         $user = User::where('name', $name)->first();
         $text = Text::where('user_id', $user->id)->first();
         $profiles = $user->profile()->orderBy('created_at')->get();
@@ -109,5 +116,39 @@ class ProfilesController extends Controller
             $profile->delete();
         }
         return redirect()->back();
+    }
+    
+    /**
+     * ファイルのアップロード処理
+     */
+    public function upload(Request $request)
+    {
+        $this->validate($request, [
+            'file' => [
+                // 必須
+                'required',
+                // アップロードされたファイルであること
+                'file',
+                // 画像ファイルであること
+                'image',
+                // MINRタイプを指定
+                'mimes:jpeg,png',
+                // 最小縦横120px, 最大縦横400px
+                'dimensions:min_width=120,min_height=120,max_width=400,max_height=400',
+            ]
+        ]);
+        
+        if ($request->file('file')->isValid([])) {
+            $filename = $request->file->store('public/avatar');
+            
+            $user = User::find(auth()->id());
+            $user->avatar_filename = basename($filename);
+            $user->save();
+            
+            return redirect('/')->with('success', '保存しました');
+        }else {
+            return redirect()->back()->withInput()
+            ->withErrors(['file' => '画像がアップロードされていないか、形式が対応していません']);
+        }
     }
 }

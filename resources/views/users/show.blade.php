@@ -5,15 +5,14 @@
  <div class="container">
     <div class="mainn">
         <div class="main-head">
-            <div class="myphoto">
-                <img src="{{ Gravatar::src($user->email, 150) . '&d=mm' }}" alt="" class="img-circle">
-            </div>
             <div class="myname">{{ $user->name }}</div>
+            <div class="myphoto">
+                <img src="{{ asset('storage/avatar/' . $user->avatar_filename) }}" alt="avatar" class="img-circle" width="150" height="150" />
+            </div>
             <div class="links">
                 <a href="#"></a>
             </div>
         </div>
-        
         <div class="main-body text-center">
             <div class="apanel-heading">
                 <h3>Profile</h3>
