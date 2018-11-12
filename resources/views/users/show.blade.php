@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
             </div>
-            @if (count($text) > 0)
+            @if ($text != null)
                 <div class="show-text">
                     <p>{!! nl2br(e($text->content)) !!}</p>
                 </div>

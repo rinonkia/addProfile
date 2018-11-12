@@ -1,4 +1,4 @@
-@if (count($text) > 0)
+@if ($text != null)
     <div class="text-content">
         <p>{!! nl2br(e($text->content)) !!}</p>
     </div>
@@ -6,7 +6,7 @@
 
 @if (Auth::id() == $user->id)
     <div class="text-control-button">
-    @if (count($text) > 0)
+    @if ($text != null)
         <ul>
             <li>
                 {!! Form::open(['route' => ['texts.destroy', $user->id], 'method' => 'delete']) !!}
