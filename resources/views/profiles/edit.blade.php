@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <h1>カラム編集ページ</h1>
-    <div class="columns-pack">
+    
+    <div class="columns-pack col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <h1>カラム編集ページ</h1>
+    
         {!! Form::model($profile, ['route' => ['profiles.update', $profile->id], 'method' => 'put']) !!}
             
             <div class="form-groupe">

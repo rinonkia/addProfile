@@ -35,6 +35,8 @@
                 <div class="show-text">
                     <p>{!! nl2br(e($text->content)) !!}</p>
                 </div>
+            @else
+                <div class="text-blank"></div>
             @endif
             </div>
         </div>

@@ -13,7 +13,9 @@
             </p>
         @endif
         
-        {!! Form::label('file', '画像アップロード', ['class' => 'control-label']) !!}
+        <p class="img-warning">縦横120-400px<br>jpg,png</p>
+        
+        {!! Form::label('file', 'プロフィール画像', ['class' => 'control-label']) !!}
         {!! Form::file('file') !!}
     </div>
     

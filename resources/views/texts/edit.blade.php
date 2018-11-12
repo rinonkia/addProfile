@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-   <h1>テキスト変更ページ</h1>
-    <div class="profile-text">
+    <div class="profile-text col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <h1>テキスト変更ページ</h1>
+
         {!! Form::model($text, ['route' => ['texts.update', $text->id], 'method' => 'put']) !!}
             <div class="profile-textarea form-group">
                 {!! Form::label('content', 'text') !!}

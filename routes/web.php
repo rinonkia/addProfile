@@ -31,4 +31,5 @@ Route::group(['middleware' => 'auth'], function() {
     
     //プロフィール画像の登録
     Route::post('upload', 'ProfilesController@upload')->name('upload.post');
+
 });

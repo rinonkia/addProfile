@@ -10,7 +10,7 @@
                 @include('profiles.image')
             </div>
             <div class="links">
-                <a href="#">Twitter</a>
+                <a href="#"></a>
             </div>
         </div>
         
@@ -33,9 +33,10 @@
                 @include('texts.text', ['text', $text ])
             </div>
             <div class="url-form">
-                <p>自分のプロフィールページ</p>
+                <p>自分のプロフィールURL</p>
                 <input id="copyTarget" type="text" value="{{ $myUrl }}" readonly>
                 <button onclick="copyToClipboard()">Copy URL</button>
+                <p>SNSにURLを貼り付けよう！</p>
             </div>
         </div>
     </div>
