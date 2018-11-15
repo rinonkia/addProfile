@@ -7,7 +7,7 @@
         <div class="main-head">
             <div class="myname">{{ $user->name }}</div>
             <div class="myphoto">
-                <img src="{{ asset('storage/avatar/' . $user->avatar_filename) }}" alt="avatar" class="img-circle" width="150" height="150" />
+                <img src="{{ $user->image_url }}" alt="avatar" class="img-circle" width="150" height="150" />
             </div>
             <div class="links">
                 <a href="#"></a>

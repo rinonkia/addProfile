@@ -7,9 +7,9 @@
     @endif
     
     <div class="form-group">
-        @if (Auth::user()->avatar_filename)
+        @if (Auth::user()->image_url)
             <p>
-                <img src="{{ asset('storage/avatar/' . $user->avatar_filename) }}" alt="avatar" class="img-circle" width="150" height="150"/>
+                <img src="{{ Auth::user()->image_url }}" alt="avatar" class="img-circle" width="150" height="150"/>
             </p>
         @endif
         

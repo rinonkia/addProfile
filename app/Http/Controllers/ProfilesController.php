@@ -8,7 +8,6 @@ use App\User;
 use App\Text;
 use App\Profile;
 
-
 class ProfilesController extends Controller
 {
     
@@ -139,6 +138,7 @@ class ProfilesController extends Controller
                 'dimensions:min_width=120,min_height=120,max_width=400,max_height=400',
             ]
         ]);
+        /*
         
         if ($request->file('file')->isValid([])) {
             $filename = $request->file->store('public/avatar');
@@ -152,5 +152,26 @@ class ProfilesController extends Controller
             return redirect()->back()->withInput()
             ->withErrors(['file' => '画像がアップロードされていないか、形式が対応していません']);
         }
+        
+        */
+        
+        
+        if ($request->hasFile('file')) {
+            
+            $user = User::find(auth()->id());
+            $image = $request->file('file');
+            
+            $path = \Storage::disk('s3')->putFile('images', $image, 'public');
+            $url = \Storage::disk('s3')->url($path);
+            $user->image_url = $url;
+            $user->save();
+            
+            return redirect('/')->with('success', '保存しました');
+        } else {
+            return redirect()->back()->withInput()
+            ->withErrors(['file' => '画像がアップロードされていないか、形式が対応していません']);
+        }
+        
+        
     }
 }
