@@ -154,11 +154,19 @@ class ProfilesController extends Controller
         }
         
         */
+        $user = User::find(auth()->id());
+        
+        if ($user->image_url != env('IMAGE_DEFAULT')) {
+            
+            $oldImagePath= "images/" . basename($user->image_url);
+            
+            $disk = \Storage::disk('s3');
+            $disk->delete($oldImagePath);
+        }
+        
         
         
         if ($request->hasFile('file')) {
-            
-            $user = User::find(auth()->id());
             $image = $request->file('file');
             
             $path = \Storage::disk('s3')->putFile('images', $image, 'public');

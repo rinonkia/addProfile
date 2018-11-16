@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnImageUrlTable extends Migration
+class DropColumnAvatarFilenameTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddColumnImageUrlTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('image_url', 255)->default(env('IMAGE_DEFAULT'));
+            $table->dropColumn('avatar_filename');
         });
     }
 
@@ -26,7 +26,7 @@ class AddColumnImageUrlTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('image_url');
+            $table->string('avatar_filename', 100)->default('default.jpg');
         });
     }
 }
