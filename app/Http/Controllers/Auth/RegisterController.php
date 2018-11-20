@@ -81,8 +81,8 @@ class RegisterController extends Controller
         if ($user->id) {
             Profile::create([
                 'user_id' => $user->id,
-                'thema' => "Thema: 好きなこと",
-                'answer' => "Answer: 旅行",
+                'thema' => "サンプル: 好きなこと",
+                'answer' => "サンプル: 旅行",
             ]);
             
             Text::create([

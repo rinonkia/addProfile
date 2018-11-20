@@ -3,9 +3,25 @@ body {
     background: #FFFFDD;
 }
 
+.welcome-blade {
+    margin-top: 25px;
+    border: 2px black solid;
+    border-radius: 3px;
+    background-color: white;
+    height: 300px;
+    
+}
+
+.welcome-button {
+    margin-bottom: 20px;
+}
+
 footer {
-    margin-top: 40px;
+    position: fixed;
+    bottom: 0;
+    width:100%;
     background-color: #000;
+    margin-top: 20px;
 }
 
 .myprofile-image {
@@ -243,5 +259,12 @@ footer {
 
 .column-create-edit-button {
     margin-top: 15px;
+    margin-bottom: 15px;
     text-align: center;
+}
+
+.create-edit {
+    border: 2px solid black;
+    border-radius: 3px;
+    background: #e5e5e5;
 }
