@@ -232,3 +232,16 @@ footer {
     border: 1px solid;
     background-color: #e5e5e5;
 }
+
+.create-edit h3 {
+    text-align: center;
+}
+
+.text-create-edit-button {
+    text-align: center;
+}
+
+.column-create-edit-button {
+    margin-top: 15px;
+    text-align: center;
+}
