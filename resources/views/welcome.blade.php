@@ -11,6 +11,9 @@
                 <div class="login-button">
                     {!! link_to_route('login', 'ログイン', null, ['class' => 'btn btn-primary']) !!}
                 </div>
+                <div class="welcomeMessage">
+                    @include('welcometext')
+                </div>
             </div>
         </div>
 @endsection
