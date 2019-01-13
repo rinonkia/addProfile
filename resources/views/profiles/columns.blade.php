@@ -17,7 +17,7 @@
                             {!! Form::close() !!}
                         </li>
                         <li>
-                            {!! link_to_route('profiles.edit', '変更', ['id' => $profile->id], ['class' => 'btn btn-primary btn-sm']) !!}
+                            {!! link_to_route('profiles.edit', '変更', ['id' => $profile->id], ['class' => 'btn btn-default btn-sm']) !!}
                         </li>
                     </ul>
                 @endif

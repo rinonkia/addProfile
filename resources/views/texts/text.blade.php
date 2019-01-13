@@ -14,7 +14,7 @@
                 {!! Form::close() !!}
             </li>
             <li>
-                {!! link_to_route('texts.edit', '編集', ['id' => $text->id], ['class' => 'btn btn-primary btn-md']) !!}
+                {!! link_to_route('texts.edit', '編集', ['id' => $text->id], ['class' => 'btn btn-default btn-md']) !!}
             </li>
         </ul>
     @else

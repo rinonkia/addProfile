@@ -13,13 +13,13 @@
             </p>
         @endif
         
-        <p class="img-warning">縦横120-400px<br>jpg,png</p>
+        <p class="img-warning">画像幅: 120px~400px<br>形式: jpg,png</p>
         
         {!! Form::label('file', 'プロフィール画像', ['class' => 'control-label']) !!}
         {!! Form::file('file') !!}
     </div>
     
     <div class="form-group">
-        {!! Form::submit('アップロード', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('アップロード', ['class' => 'btn btn-default']) !!}
     </div>
 {!! Form::close() !!}

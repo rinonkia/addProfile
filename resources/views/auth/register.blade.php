@@ -30,7 +30,7 @@
                 </div>
                 
                 <div class="text-center">
-                    {!! Form::submit('Sing up!', ['class' => 'btn btn-primary btn-lg ']) !!}
+                    {!! Form::submit('Sing up!', ['class' => 'btn btn-default btn-lg ']) !!}
                 </div>
             {!! Form::close() !!}
         </div>

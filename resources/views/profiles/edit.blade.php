@@ -17,7 +17,7 @@
                 {!! Form::text('answer', null, ['class' => 'form-control']) !!}
             </div>
             <div class="button column-create-edit-button">
-                {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-default']) !!}
             </div>
         {!! Form::close() !!}
     </div>

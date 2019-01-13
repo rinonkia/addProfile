@@ -11,7 +11,7 @@
             </div>
                 
             <div class="text-create-edit-button form-group text-button">
-                {!! Form::submit('更新', ['class' => 'btn btn-primary btn-lg']) !!}
+                {!! Form::submit('更新', ['class' => 'btn btn-default btn-lg']) !!}
             </div>
         {!! Form::close() !!}
     </div>
