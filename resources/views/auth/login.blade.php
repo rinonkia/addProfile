@@ -24,7 +24,7 @@
                 
             {!! Form::close() !!}
             
-            {!! link_to_route('signup.get', '今からプロフィールを作る!!') !!}
+            {!! link_to_route('signup.get', '今からプロフィールを作る') !!}
 
         </div>
     </div>
