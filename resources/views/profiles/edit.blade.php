@@ -8,16 +8,16 @@
         {!! Form::model($profile, ['route' => ['profiles.update', $profile->id], 'method' => 'put']) !!}
             
             <div class="form-groupe">
-                {!! Form::label('thema', 'Thema') !!}
+                {!! Form::label('thema', 'テーマ') !!}
                 {!! Form::text('thema', null, ['class' => 'form-control']) !!}
             </div>
             
             <div class="form-groupe">
-                {!! Form::label('answer', 'Answer') !!}
+                {!! Form::label('answer', 'アンサー') !!}
                 {!! Form::text('answer', null, ['class' => 'form-control']) !!}
             </div>
             <div class="button column-create-edit-button">
-                {!! Form::submit('登録する', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
             </div>
         {!! Form::close() !!}
     </div>

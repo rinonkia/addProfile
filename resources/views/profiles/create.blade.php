@@ -8,12 +8,12 @@
         {!! Form::open(['route' => 'profiles.store']) !!}
             
             <div class="form-groupe">
-                {!! Form::label('thema', 'Thema') !!}
+                {!! Form::label('thema', 'テーマ') !!}
                 {!! Form::text('thema', null, ['class' => 'form-control']) !!}
             </div>
             
             <div class="form-groupe">
-                {!! Form::label('answer', 'Answer') !!}
+                {!! Form::label('answer', 'アンサー') !!}
                 {!! Form::text('answer', null, ['class' => 'form-control']) !!}
             </div>
             <div class="column-create-edit-button button">

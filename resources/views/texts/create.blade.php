@@ -7,7 +7,7 @@
     
         {!! Form::open(['route' => 'texts.store']) !!}
             <div class="profile-textarea form-group">
-                {!! Form::label('content', 'Introduce!!') !!}
+                {!! Form::label('content', '自己紹介テキスト') !!}
                 {!! Form::textarea('content', null, ['class' => 'form-control', 'row' => '2']) !!}
             </div>
                 

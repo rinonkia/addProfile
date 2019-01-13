@@ -20,6 +20,6 @@
     </div>
     
     <div class="form-group">
-        {!! Form::submit('アップロード', ['class' => 'btn btn-default']) !!}
+        {!! Form::submit('アップロード', ['class' => 'btn btn-primary']) !!}
     </div>
 {!! Form::close() !!}

@@ -24,7 +24,7 @@
                     
                     @if (Auth::id() == $user->id && $count_columns < 10 )
                         <div class="columns-create-button">
-                            {!! link_to_route('profiles.create', 'カラムを追加する', null, ['class' => 'btn btn-default']) !!}
+                            {!! link_to_route('profiles.create', 'カラムを追加', null, ['class' => 'btn btn-default']) !!}
                         </div>
                     @endif
                 </div>

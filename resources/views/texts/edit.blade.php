@@ -6,7 +6,7 @@
 
         {!! Form::model($text, ['route' => ['texts.update', $text->id], 'method' => 'put']) !!}
             <div class="profile-textarea form-group">
-                {!! Form::label('content', 'Introduce!!') !!}
+                {!! Form::label('content', '自己紹介テキスト') !!}
                 {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'row' => '2']) !!}
             </div>
                 
