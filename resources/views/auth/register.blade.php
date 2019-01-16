@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h1>新規登録画面</h1>
     </div>
     
     <div class="row">
@@ -25,12 +25,12 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'Confirmation') !!}
+                    {!! Form::label('password_confirmation', 'パスワード確認') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="text-center">
-                    {!! Form::submit('Sing up!', ['class' => 'btn btn-default btn-lg ']) !!}
+                    {!! Form::submit('新規登録', ['class' => 'btn btn-default btn-lg ']) !!}
                 </div>
             {!! Form::close() !!}
         </div>

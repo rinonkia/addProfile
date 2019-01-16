@@ -13,7 +13,7 @@
             </p>
         @endif
         
-        <p class="img-warning">画像幅: 120px~400px<br>形式: jpg,png</p>
+        <p class="img-warning">画像幅: 120px~400px<br>形式: jpeg,png</p>
         
         {!! Form::label('file', 'プロフィール画像', ['class' => 'control-label']) !!}
         {!! Form::file('file') !!}
