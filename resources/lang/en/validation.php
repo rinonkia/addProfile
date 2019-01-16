@@ -133,6 +133,7 @@ return [
     'attributes' => [
         'name' => '名前',
         'loginid' => 'ログインＩＤ',
-        'pass' => 'パスワード',
+        'password' => 'パスワード',
+        'email' => 'メールアドレス',
     ],
 ]];
