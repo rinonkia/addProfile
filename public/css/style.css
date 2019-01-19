@@ -1,6 +1,6 @@
 
 body {
-    background: #FFFFDD;
+    background: #f1f1f1;
 }
 
 .welcome-blade {
@@ -219,7 +219,7 @@ footer {
 
 .show-text {
     width: 90%;
-    background-color: #FFFFDD;
+    background-color: #f1f1f1;
     border: 2px solid;
     border-radius: 3px;
     text-align: left;
