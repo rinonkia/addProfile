@@ -41,7 +41,10 @@ class ProfileTextsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'content' => 'required|max:191',
+            'content' => [
+                'required',
+                'max:191',
+            ]
         ]);
         
         $request->user()->text()->create([
@@ -93,7 +96,10 @@ class ProfileTextsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'content' => 'required',
+            'content' => [
+                'required',
+                'max:191',
+            ]
         ]);
         
         $text = Text::find($id);

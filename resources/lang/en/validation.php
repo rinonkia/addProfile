@@ -134,6 +134,9 @@ return [
         'loginid' => 'ログインＩＤ',
         'password' => 'パスワード',
         'email' => 'メールアドレス',
-        'file' => 'ファイル'
+        'file' => 'ファイル',
+        'thema' => 'テーマ',
+        'answer' => 'アンサー',
+        'content' => 'テキスト'
     ],
 ];
